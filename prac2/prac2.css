@@ -52,3 +52,47 @@ body.blueBody{
 .fancy{
     font-family: cursive;
 }
+
+div.out{
+    border-style: solid;
+    border-color: darkgrey;
+    border-radius: 8px;
+    border-width: 1px;
+}
+
+span.red-border{
+    border-style: solid;
+    border-color: red;
+}
+
+div.red-border{
+    border-style: solid;
+    border-color: red;
+}
+
+span.red-outline{
+    border-style: solid;
+    outline-color: red;
+}
+
+div.redRounded{
+    border-style: solid;
+    border-color: red;
+    border-radius: 8px 8px 0px 0px;
+    border-bottom-width: 0px;
+}
+
+div.blue-border{
+    border-style: solid;
+    border-color: blue;
+}
+
+div.blueRounded{
+    border-style: solid;
+    border-color: blue;
+    border-radius: 0px 0px 8px 8px;
+}
+
+hr{
+    color: #CFDFE4;
+}
