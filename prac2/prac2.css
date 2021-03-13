@@ -65,14 +65,14 @@ span.red-border{
     border-color: red;
 }
 
+span.red-outline{
+    outline-style: solid;
+    outline-color: red;
+}
+
 div.red-border{
     border-style: solid;
     border-color: red;
-}
-
-span.red-outline{
-    border-style: solid;
-    outline-color: red;
 }
 
 div.redRounded{
@@ -94,5 +94,5 @@ div.blueRounded{
 }
 
 hr{
-    color: #CFDFE4;
+    border-color: #CFDFE4;
 }
