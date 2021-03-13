@@ -36,7 +36,19 @@ pre.transparent-text{
     color: rgba(00, 00, 00, 0.5);
 }
 
-body.blue{
+body.blueBody{
     background-color: #DCF5F5;
     background-image:url(cross.png);
+}
+
+#content{
+    background-color: white;
+}
+
+.blue{
+    color: blue;
+}
+
+.fancy{
+    font-family: cursive;
 }
