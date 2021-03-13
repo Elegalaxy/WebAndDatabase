@@ -24,6 +24,14 @@ h2{
     text-align: left;
 }
 
+h3{
+    color: rgba(00, 00, 8b, 0.8);
+}
+
 pre{
     font-family: monospace;
+}
+
+pre.transparent-text{
+    color: rgba(00, 00, 00, 0.5);
 }
