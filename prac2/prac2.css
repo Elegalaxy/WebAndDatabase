@@ -35,3 +35,8 @@ pre{
 pre.transparent-text{
     color: rgba(00, 00, 00, 0.5);
 }
+
+body.blue{
+    background-color: #DCF5F5;
+    background-image:url(cross.png);
+}
