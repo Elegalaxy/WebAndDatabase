@@ -75,11 +75,10 @@ div.red-border{
     border-color: red;
 }
 
-div.redRounded{
-    border-style: solid;
-    border-top-color: red;
-    border-left-color: red;
-    border-right-color: red;
+.redRounded{
+    border-top-color: solid red;
+    border-left-color: solid red;
+    border-right-color: solid red;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
