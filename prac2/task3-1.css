@@ -3,7 +3,7 @@
 }
 
 .normal {
-    color: green;
+    color: black;
 }
 
 body {
@@ -39,7 +39,7 @@ div p span span.color {
 }
 
 p span span.normal {
-    color: black;
+    color: green;
 }
 
 div + p span span.color {
