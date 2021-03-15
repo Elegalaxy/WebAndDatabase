@@ -1,9 +1,9 @@
 h1{
     font-family: sans-serif;
-}
+}   
 
 p{
-    font-family: serif;
+    font-family: Noto serif, serif;
 }
 
 p a{
@@ -75,10 +75,11 @@ div.red-border{
     border-color: red;
 }
 
-.redRounded{
-    border-top-color: solid red;
-    border-left-color: solid red;
-    border-right-color: solid red;
+div.redRounded{
+    border-style: solid;
+    border-top-color: red;
+    border-left-color: red;
+    border-right-color: red;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
@@ -137,4 +138,26 @@ div.outter div.inner2{
 
 .font{
     font-family: Releway, serif;
+}
+
+.quote{
+    font-family: Raleway;
+    word-spacing: 0.2em;
+    text-align: justify;
+    line-height: 1.5;
+    color: dimgrey;
+}
+
+h4.font{
+    font-style: italic;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+i{
+    color:#BFCFD4;
+}
+
+.icon{
+    text-align: center;
 }
