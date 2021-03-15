@@ -80,7 +80,8 @@ div.redRounded{
     border-top-color: red;
     border-left-color: red;
     border-right-color: red;
-    border-radius: 8px 8px 0px 0px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 div.blue-border{
@@ -94,7 +95,7 @@ div.blueRounded{
     border-radius: 0px 0px 8px 8px;
 }
 
-hr.line{
+hr{
     border-color: #CFDFE4;
 }
 
