@@ -77,9 +77,10 @@ div.red-border{
 
 div.redRounded{
     border-style: solid;
-    border-color: red;
+    border-top-color: red;
+    border-left-color: red;
+    border-right-color: red;
     border-radius: 8px 8px 0px 0px;
-    border-bottom-width: 0px;
 }
 
 div.blue-border{
@@ -125,7 +126,6 @@ div.outter div.inner2{
     height: 400px;
     width: 400px;
     padding: 12px;
-    margin-left: 40%;
 }
 
 .space{
