@@ -96,3 +96,38 @@ div.blueRounded{
 hr{
     border-color: #CFDFE4;
 }
+
+div.outter{
+    background-color: blue;
+    border-color: red;
+    border-style: solid;
+}
+
+.outter2{
+    margin-top: 20px;
+}
+
+div.outter div{
+    background-color: yellow;
+    border-color: red;
+    border-style: solid;
+    text-align: right;
+}
+
+div.outter div.inner{
+    padding: 12px;
+    margin: 10px 20px 10px 20px;
+    height: 200px;
+    width: 700px;
+}
+
+div.outter div.inner2{
+    height: 400px;
+    width: 400px;
+    padding: 12px;
+    margin-left: 40%;
+}
+
+.space{
+    padding: 10px;
+}
