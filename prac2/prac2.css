@@ -140,7 +140,7 @@ div.outter div.inner2{
     font-family: Releway, serif;
 }
 
-.quote{
+quote{
     font-family: Raleway;
     word-spacing: 0.2em;
     text-align: justify;
@@ -160,4 +160,8 @@ i{
 
 .icon{
     text-align: center;
+}
+
+.body{
+    font-family: Noto serif, serif;
 }
