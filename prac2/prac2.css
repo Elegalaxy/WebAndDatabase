@@ -126,6 +126,7 @@ div.outter div.inner2{
     height: 400px;
     width: 400px;
     padding: 12px;
+    margin: auto;
 }
 
 .space{
