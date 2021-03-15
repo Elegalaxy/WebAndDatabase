@@ -120,6 +120,7 @@ div.outter div.inner{
     margin: 10px 20px 10px 20px;
     height: 200px;
     width: 700px;
+    box-sizing:border-box;
 }
 
 div.outter div.inner2{
@@ -127,8 +128,13 @@ div.outter div.inner2{
     width: 400px;
     padding: 12px;
     margin: auto;
+    box-sizing:border-box;
 }
 
 .space{
     padding: 10px;
+}
+
+.font{
+    font-family: Releway, serif;
 }
