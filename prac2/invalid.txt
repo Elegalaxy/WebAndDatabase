@@ -1,4 +1,2 @@
-The character encoding was not declared. Proceeding using windows-1252.
-Start tag seen without seeing a doctype first. Expected <!DOCTYPE html>.
-Parse Error h2 { color: red; }
-Family names containing whitespace should be quoted. If quoting is omitted, any whitespace characters before and after the name are ignored and any sequence of whitespace characters inside the name is converted to a single space.
+error: Start tag seen without seeing a doctype first. Expected “<!DOCTYPE html>”.
+error: CSS: Parse Error.
