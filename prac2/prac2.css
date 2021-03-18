@@ -165,3 +165,39 @@ i{
 .body{
     font-family: Noto serif, serif;
 }
+
+ul.list li{
+    float: left;
+    display: inline;
+}
+
+li a.list{
+    display: block;
+    background-color: darkgrey;
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+    text-align: center;
+}
+
+li a.list:hover{
+    background-color: white;
+    color: darkgrey;
+    text-shadow: lightgrey;
+}
+
+ul.list{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkgrey;
+}
+
+ul.sq {
+    list-style-type: square;
+}
+  
+ol.roman {
+    list-style-type: lower-roman;
+}
