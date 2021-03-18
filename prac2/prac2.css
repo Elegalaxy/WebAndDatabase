@@ -183,7 +183,7 @@ li a.list{
 li a.list:hover{
     background-color: white;
     color: darkgrey;
-    text-shadow: lightgrey;
+    text-shadow:1px 1px lightgrey;
 }
 
 ul.list{
