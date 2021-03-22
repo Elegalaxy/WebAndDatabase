@@ -1,2 +1,0 @@
-error: Start tag seen without seeing a doctype first. Expected “<!DOCTYPE html>”.
-error: CSS: Parse Error.
