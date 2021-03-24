@@ -21,3 +21,30 @@ function pos(){
 	
 	document.getElementById("posts").appendChild(post);
 }
+
+function menuBtn(){
+	let main = document.getElementById("main");
+	let menu = document.getElementById("menu");
+	if(main.style.display == "none"){
+		main.style.display = "block";
+		menu.style.display = "none";
+	}else{
+		main.style.display = "none";
+		menu.style.display = "block";
+	}
+}
+
+function radioBtn(String val){
+	let btn = document.getElementsByClassName("controls left")[0];
+	var n = btn.getElementsByTagName("input")[0];
+	let blue = btn.getElementsByTagName("input")[1];
+	let red = btn.getElementsByTagName("input")[2];
+	
+	if(val == "red"){
+		red.checked = true;
+		blue.checked = false;
+	}else{
+		red.checked = false;
+		blue.checked = true;
+	}
+}
