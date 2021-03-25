@@ -19,11 +19,21 @@ function pos(){
 		let text = document.getElementById("input").innerHTML;
 		p2.setAttribute("class", "post-content");
 		p2.innerHTML = text;
+
 		if(postColor == 1){
 			p2.style.color = "red";
 		}else if(postColor == 2){
 			p2.style.color = "blue";
 		}
+
+		if(textBold){
+			p2.style.fontWeight = "bold";
+		}
+		
+		if(textItalic){
+			p2.style.fontStyle = "italic";			
+		}
+	
 		post.appendChild(p2);
 		post.appendChild(document.createElement("BR"));
 
@@ -59,4 +69,29 @@ bg.addEventListener('change', updateValue);
 
 function updateValue(){
 	document.body.style.backgroundColor = bg.value;
+}
+
+var textBold = false;
+var textItalic = false;
+function textStyle(isBold){
+	if(isBold){
+		textBold = !textBold;
+	}else{
+		textItalic = !textItalic;
+	}
+}
+
+var slider = document.getElementsByClassName("controls left")[1].getElementsByTagName("input")[0];
+slider.addEventListener('input', changePost);
+function changePost(){
+	let postArr = document.getElementById("posts").getElementsByTagName("div");
+
+	for(let i = 0; i < postArr.length; i++){
+		if(i < slider.value*2){
+			postArr[i].style.display = "block";
+		}
+		else{
+			postArr[i].style.display = "none";
+		}
+	}
 }
