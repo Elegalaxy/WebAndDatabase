@@ -1,26 +1,30 @@
-var i = 1;
+var n = 1;
 function addNum() {
-	document.getElementById("mcount").innerHTML = i;
-	i++;
+	document.getElementById("mcount").innerHTML = n;
+	n++;
 }
 
 function pos(){
-	// let post = document.createElement("DIV");
-	// post.setAttribute("class", "post");
 	post = document.getElementById("posts");
-	
-	let p = document.createElement("P");
-	p.setAttribute("class", "post-time");
-	p.innerHTML = Date();
-	post.appendChild(p);
-	
-	let p2 = document.createElement("P");
-	let text = document.getElementById("input").innerHTML;
-	p2.setAttribute("class", "post-content");
-	p2.innerHTML = text;
-	post.appendChild(p2);
-	
-	// document.getElementById("posts").appendChild(post);
+	postCount = btn.getElementsByTagName("input")[0].value;
+
+	for(let i = 0; i < postCount; i++){
+		let p = document.createElement("P");
+		p.setAttribute("class", "post-time");
+		p.innerHTML = Date();
+		post.appendChild(p);
+		
+		let p2 = document.createElement("P");
+		let text = document.getElementById("input").innerHTML;
+		p2.setAttribute("class", "post-content");
+		p2.innerHTML = text;
+		if(postColor == 1){
+			p2.style.color = "red";
+		}else if(postColor == 2){
+			p2.style.color = "blue";
+		}
+		post.appendChild(p2);
+	}
 }
 
 function menuBtn(){
@@ -35,17 +39,14 @@ function menuBtn(){
 	}
 }
 
-function radioBtn(value){
-	let btn = document.getElementsByClassName("controls left")[0];
-	var n = btn.getElementsByTagName("input")[0];
-	let blue = btn.getElementsByTagName("input")[1];
-	let red = btn.getElementsByTagName("input")[2];
-	
+var btn = document.getElementsByClassName("controls left")[0];
+var postColor = 0; //Black, Red, Blue
+var postCount = 1;
+
+function radioBtn(val){	
 	if(val == "red"){
-		red.checked = true;
-		blue.checked = false;
-	}else{
-		red.checked = false;
-		blue.checked = true;
+		postColor = 1;
+	}else if(val == "blue"){
+		postColor = 2;
 	}
 }
