@@ -44,7 +44,7 @@ hr {
     clear: both;
 }
 
-p.post-time{
+div.post-time{
 	color: grey;
 	font-weight: bold;
 }

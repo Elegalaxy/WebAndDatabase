@@ -9,12 +9,12 @@ function pos(){
 	postCount = btn.getElementsByTagName("input")[0].value;
 
 	for(let i = 0; i < postCount; i++){
-		let p = document.createElement("P");
+		let p = document.createElement("DIV");
 		p.setAttribute("class", "post-time");
 		p.innerHTML = Date();
 		post.appendChild(p);
 		
-		let p2 = document.createElement("P");
+		let p2 = document.createElement("DIV");
 		let text = document.getElementById("input").innerHTML;
 		p2.setAttribute("class", "post-content");
 		p2.innerHTML = text;
