@@ -47,15 +47,24 @@ function pos(){
 		}else if(postColor == 2){
 			p2.style.color = "blue";
 		}
+		let R = document.getElementsByClassName("controls left")[0].getElementsByTagName("input")[1];
+		let BL = document.getElementsByClassName("controls left")[0].getElementsByTagName("input")[2];
 
-		if(textBold){
-			p2.style.fontWeight = "bold";
+		if(R.checked){
+			p2.style.color = R.value;
 		}
-		
-		if(textItalic){
-			p2.style.fontStyle = "italic";			
+		else if(BL.checked){
+			p2.style.color = BL.value;
 		}
-	
+
+		let B = document.getElementsByClassName("controls left")[1].getElementsByTagName("input")[1];
+		let I = document.getElementsByClassName("controls left")[1].getElementsByTagName("input")[2];
+		if(B.checked){
+			p2.style.fontWeight = B.value;
+		}
+		if(I.checked){
+			p2.style.fontStyle = I.value;
+		}
 		post.appendChild(p2);
 	}
 }
@@ -76,29 +85,11 @@ var btn = document.getElementsByClassName("controls left")[0];
 var postColor = 0; //Black, Red, Blue
 var postCount = 1;
 
-function radioBtn(val){	
-	if(val == "red"){
-		postColor = 1;
-	}else if(val == "blue"){
-		postColor = 2;
-	}
-}
-
 var bg = document.getElementById("menu").getElementsByTagName("input")[0];
 bg.addEventListener('change', updateValue);
 
 function updateValue(){
 	document.body.style.backgroundColor = bg.value;
-}
-
-var textBold = false;
-var textItalic = false;
-function textStyle(isBold){
-	if(isBold){
-		textBold = !textBold;
-	}else{
-		textItalic = !textItalic;
-	}
 }
 
 var slider = document.getElementsByClassName("controls left")[1].getElementsByTagName("input")[0];
