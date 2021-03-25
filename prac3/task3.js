@@ -5,20 +5,42 @@ function addNum() {
 }
 
 function pos(){
-	post = document.getElementById("posts");
+	let isChild = false;
+	if(dropMenu.selectedIndex == 0){
+		post = document.getElementById("posts");
+		isChild = false;
+	}else{
+		post = postArr[dropMenu.selectedIndex*2-1];
+		post.appendChild(document.createElement("BR"));
+		post.appendChild(document.createElement("BR"));
+		isChild = true;
+	}
 	postCount = btn.getElementsByTagName("input")[0].value;
 
 	for(let i = 0; i < postCount; i++){
 		let p = document.createElement("DIV");
+		let l = post.style.marginLeft;
+		let mar = l.substring(0,l.length-2);
+
 		p.setAttribute("class", "post-time");
 		p.innerHTML = Date();
+		p.style.marginLeft = 0;
+		if(isChild){
+			p.style.marginLeft = parseInt(mar) + 10 + "px";
+		}
 		post.appendChild(p);
 		post.appendChild(document.createElement("BR"));
 		
 		let p2 = document.createElement("DIV");
-		let text = document.getElementById("input").innerHTML;
-		p2.setAttribute("class", "post-content");
+		let text = document.getElementById("inputTxt").value;
+		createOption(text);
 		p2.innerHTML = text;
+		p2.setAttribute("class", "post-content");
+		p2.style.marginLeft = 0;
+
+		if(isChild){
+			p2.style.marginLeft = parseInt(mar) + 10 + "px";
+		}
 
 		if(postColor == 1){
 			p2.style.color = "red";
@@ -35,8 +57,6 @@ function pos(){
 		}
 	
 		post.appendChild(p2);
-		post.appendChild(document.createElement("BR"));
-
 	}
 }
 
@@ -83,8 +103,8 @@ function textStyle(isBold){
 
 var slider = document.getElementsByClassName("controls left")[1].getElementsByTagName("input")[0];
 slider.addEventListener('input', changePost);
+var postArr = document.getElementById("posts").getElementsByTagName("div");
 function changePost(){
-	let postArr = document.getElementById("posts").getElementsByTagName("div");
 
 	for(let i = 0; i < postArr.length; i++){
 		if(i < slider.value*2){
@@ -94,4 +114,12 @@ function changePost(){
 			postArr[i].style.display = "none";
 		}
 	}
+}
+
+var dropMenu = document.getElementsByTagName("select")[0];
+
+function createOption(post){
+	let opt = document.createElement("OPTION");
+	opt.innerHTML = post;
+	dropMenu.appendChild(opt);
 }
