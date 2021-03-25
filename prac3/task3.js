@@ -50,3 +50,10 @@ function radioBtn(val){
 		postColor = 2;
 	}
 }
+
+var bg = document.getElementById("menu").getElementsByTagName("input")[0];
+bg.addEventListener('change', updateValue);
+
+function updateValue(){
+	document.body.style.backgroundColor = bg.value;
+}
