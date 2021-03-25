@@ -13,6 +13,7 @@ function pos(){
 		p.setAttribute("class", "post-time");
 		p.innerHTML = Date();
 		post.appendChild(p);
+		post.appendChild(document.createElement("BR"));
 		
 		let p2 = document.createElement("DIV");
 		let text = document.getElementById("input").innerHTML;
@@ -24,6 +25,8 @@ function pos(){
 			p2.style.color = "blue";
 		}
 		post.appendChild(p2);
+		post.appendChild(document.createElement("BR"));
+
 	}
 }
 
