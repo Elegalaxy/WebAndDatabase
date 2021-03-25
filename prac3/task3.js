@@ -5,8 +5,9 @@ function addNum() {
 }
 
 function pos(){
-	let post = document.createElement("DIV");
-	post.setAttribute("class", "post");
+	// let post = document.createElement("DIV");
+	// post.setAttribute("class", "post");
+	post = document.getElementById("posts");
 	
 	let p = document.createElement("P");
 	p.setAttribute("class", "post-time");
@@ -19,7 +20,7 @@ function pos(){
 	p2.innerHTML = text;
 	post.appendChild(p2);
 	
-	document.getElementById("posts").appendChild(post);
+	// document.getElementById("posts").appendChild(post);
 }
 
 function menuBtn(){
@@ -34,7 +35,7 @@ function menuBtn(){
 	}
 }
 
-function radioBtn(String val){
+function radioBtn(value){
 	let btn = document.getElementsByClassName("controls left")[0];
 	var n = btn.getElementsByTagName("input")[0];
 	let blue = btn.getElementsByTagName("input")[1];
