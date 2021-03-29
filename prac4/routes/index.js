@@ -12,4 +12,10 @@ router.get('/count', function(req, res, next){
   res.send(String(counter));
 });
 
+var lastVisit = 0;
+router.get('/last.txt', function(req, res, next){
+  res.send(String(lastVisit));
+  lastVisit = Date.now();
+});
+
 module.exports = router;
