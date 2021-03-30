@@ -18,4 +18,12 @@ router.get('/last.txt', function(req, res, next){
   lastVisit = Date.now();
 });
 
+var ind = 0;
+var color = ["red", "yellow", "green", "blue"];
+router.get('/color', function(req, res, next){
+  if(ind >= 4) ind = 0;
+  console.log(color[ind]);
+  res.send(color[ind++]);
+});
+
 module.exports = router;
