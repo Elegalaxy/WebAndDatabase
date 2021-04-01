@@ -61,4 +61,9 @@ router.get('/log.html', function(req, res, next){
   `);
 });
 
+router.get('/getTime', function(req, res, next){
+  res.send(String(lastVisit));
+});
+
+
 module.exports = router;

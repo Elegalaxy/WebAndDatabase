@@ -6,7 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body onload="getTime()">
     <h1>My Prac 4 Express Server</h1>
+    <p id="time"></p>
+    <script>
+        function getTime(){
+            let xml = new XMLHttpRequest();
+            xml.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    document.getElementById("time").innerHTML = "This page was last viewed " + this.responseText;
+                }
+            };
+            xml.open("GET", "/getTime", true);
+            xml.send();
+        }
+    </script>
 </body>
 </html>
