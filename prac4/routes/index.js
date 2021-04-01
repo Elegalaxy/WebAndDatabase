@@ -21,10 +21,21 @@ router.get('/last.txt', function(req, res, next){
 
 var ind = 0;
 var color = ["red", "yellow", "green", "blue"];
-router.get('/color', function(req, res, next){
+router.get('/color.html', function(req, res, next){
   if(ind >= 4) ind = 0;
-  console.log(color[ind]);
-  res.send(color[ind++]);
+  res.send(`<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+  </head>
+  <body>
+      <h1 style="color:${color[ind]}">${color[ind++]}</h1>
+      <script src="./javascripts/color.js"></script>
+  </body>
+  </html>`);
 });
 
 var timeList = [];
