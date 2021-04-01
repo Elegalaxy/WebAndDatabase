@@ -18,8 +18,7 @@ var newVisit = "";
 router.get('/last.txt', function(req, res, next){
   lastVisit = newVisit;
   res.send(String(lastVisit));
-  newVisit = Date.now();
-
+  newVisit = new Date().toLocaleString();
 });
 
 var ind = 0;
@@ -63,10 +62,5 @@ router.get('/log.html', function(req, res, next){
   </html>
   `);
 });
-
-router.get('/getTime', function(req, res, next){
-  res.send(String(lastVisit));
-});
-
 
 module.exports = router;

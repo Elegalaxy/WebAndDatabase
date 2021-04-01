@@ -17,7 +17,7 @@
                     document.getElementById("time").innerHTML = "This page was last viewed " + this.responseText;
                 }
             };
-            xml.open("GET", "/getTime", true);
+            xml.open("GET", "/last.txt", true);
             xml.send();
         }
     </script>
