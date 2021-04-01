@@ -40,6 +40,13 @@ router.get('/color.html', function(req, res, next){
   </html>`);
 });
 
+var ind2 = 0;
+router.get('/color.txt', function(req, res, next){
+  if(ind2 >= 4) ind2 = 0;
+  res.send(color[ind2++]);
+});
+
+
 var timeList = [];
 router.get('/log.html', function(req, res, next){
   timeList.push(Date());

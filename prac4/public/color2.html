@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="getColor()">
+    <h1 id="color"></h1>
+    <button onclick="getColor()">Button</button>
+    <script>
+        function getColor(){
+            let xml = new XMLHttpRequest();
+            xml.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    let h = document.getElementById("color");
+                    h.innerHTML = this.responseText;
+                    h.style.color = this.responseText;
+                }
+            };
+            xml.open("GET", "/color.txt", true);
+            xml.send();
+        }
+    </script>
+</body>
+</html>
