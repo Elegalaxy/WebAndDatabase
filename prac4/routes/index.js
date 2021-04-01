@@ -14,9 +14,12 @@ router.get('/count', function(req, res, next){
 });
 
 var lastVisit = "";
+var newVisit = "";
 router.get('/last.txt', function(req, res, next){
+  lastVisit = newVisit;
   res.send(String(lastVisit));
-  lastVisit = Date.now();
+  newVisit = Date.now();
+
 });
 
 var ind = 0;
