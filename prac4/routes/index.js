@@ -49,10 +49,10 @@ router.get('/color.txt', function(req, res, next){
 
 var timeList = [];
 router.get('/log.html', function(req, res, next){
-  timeList.push(Date());
+  timeList.push(String(Date()));
   let t = "";
   for(let i = 0; i < timeList.length; i++){
-    t += "<li>" + String(timeList[i]) + "</li>";
+    t += "<li>" + timeList[i] + "</li>";
   }
   res.send(`
   <!DOCTYPE html>
@@ -69,5 +69,15 @@ router.get('/log.html', function(req, res, next){
   </html>
   `);
 });
+
+router.get('/log.json', function(req, res, next){
+  timeList.push(String(Date()));
+  res.send(JSON.stringify(timeList));
+});
+
+router.get('/log-ro.json', function(req, res, next){
+  res.send(JSON.stringify(timeList));
+});
+
 
 module.exports = router;

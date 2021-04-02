@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list"></ul>
+
+    <script>
+        setInterval(reload, 10000);
+
+        function reload(){
+            let xml = new XMLHttpRequest();
+            xml.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    let l = document.getElementsByTagName("ul")[0];
+                    let tempL = document.createElement("UL");
+
+                    let r = JSON.parse(this.responseText);
+                    for(let i = 0; i < r.length; i++){
+                        let temp = document.createElement("LI");
+                        temp.innerHTML = r[i];
+                        tempL.appendChild(temp);
+                    }
+                    l.parentNode.replaceChild(tempL, l);
+                }
+            };
+            xml.open("GET", "/log-ro.json", true);
+            xml.send();
+        }
+
+    </script>
+</body>
+</html>
