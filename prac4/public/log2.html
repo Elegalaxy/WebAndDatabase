@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body onload="start()">
     <ul id="list"></ul>
 
     <script>
@@ -32,6 +32,11 @@
             xml.send();
         }
 
+        function start(){
+            let xml = new XMLHttpRequest();
+            xml.open("GET", "/log.json", true);
+            xml.send();
+        }
     </script>
 </body>
 </html>
