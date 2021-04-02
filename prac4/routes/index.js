@@ -72,11 +72,11 @@ router.get('/log.html', function(req, res, next){
 
 router.get('/log.json', function(req, res, next){
   timeList.push(String(Date()));
-  res.send(JSON.stringify(timeList));
+  res.send(timeList);
 });
 
 router.get('/log-ro.json', function(req, res, next){
-  res.send(JSON.stringify(timeList));
+  res.send(timeList);
 });
 
 
