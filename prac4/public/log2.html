@@ -34,6 +34,7 @@
 
         function start(){
             let xml = new XMLHttpRequest();
+            reload();
             xml.open("GET", "/log.json", true);
             xml.send();
         }
