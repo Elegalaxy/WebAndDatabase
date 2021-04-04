@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My AJAX Site</h1>
+    <button onclick="contactBtn()">contact</button>
+    <button onclick="searchBtn()">search</button>
+    <button onclick="aboutBtn()">about</button>
+    <div id="div"></div>
+    <script>
+        function contactBtn(){
+            let xml = new XMLHttpRequest();
+            xml.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    let d = document.getElementById("div");
+                    let child = this.responseText;
+
+                    let temp = document.createElement("DIV");
+                    temp.setAttribute("id", "div");
+                    temp.innerHTML = child;
+                    d.parentNode.replaceChild(temp, d);
+                    
+                }
+            };
+            xml.open("GET", "/contact.ajax", true);
+            xml.send();
+        }
+
+        function searchBtn(){
+            let xml = new XMLHttpRequest();
+            xml.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    let d = document.getElementById("div");
+                    let child = this.responseText;
+
+                    let temp = document.createElement("DIV");
+                    temp.setAttribute("id", "div");
+                    temp.innerHTML = child;
+                    d.parentNode.replaceChild(temp, d);
+                }
+            };
+            xml.open("GET", "/search.ajax", true);
+            xml.send();
+        }
+
+        function aboutBtn(){            
+            let xml = new XMLHttpRequest();
+            xml.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    let d = document.getElementById("div");
+                    let child = this.responseText;
+
+                    let temp = document.createElement("DIV");
+                    temp.setAttribute("id", "div");
+                    temp.innerHTML = child;
+                    d.parentNode.replaceChild(temp, d);
+
+                }
+            };
+            xml.open("GET", "/about.ajax", true);
+            xml.send();
+        }
+
+    </script>
+</body>
+</html>

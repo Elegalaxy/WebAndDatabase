@@ -79,5 +79,12 @@ router.get('/log-ro.json', function(req, res, next){
   res.send(timeList);
 });
 
+router.get('/contact.ajax', function(req, res, next){
+  res.send("<a href='yokai.czk@gmail.com'>Email</a>");
+});
+
+router.get('/search.ajax', function(req, res, next){
+  res.send("<input></input><button type='submit'><i class='fa fa-search'>Search</i></button>");
+});
 
 module.exports = router;
