@@ -70,13 +70,15 @@ router.get('/log.html', function(req, res, next){
   `);
 });
 
+
+var timeList2 = [];
 router.get('/log.json', function(req, res, next){
-  timeList.push(String(Date()));
-  res.send(timeList);
+  timeList2.push(String(Date()));
+  res.send(timeList2);
 });
 
 router.get('/log-ro.json', function(req, res, next){
-  res.send(timeList);
+  res.send(timeList2);
 });
 
 router.get('/contact.ajax', function(req, res, next){
