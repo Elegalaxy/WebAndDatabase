@@ -87,4 +87,17 @@ router.get('/search.ajax', function(req, res, next){
   res.send("<input></input><button type='submit'><i class='fa fa-search'>Search</i></button>");
 });
 
+var visited = false;
+router.get('/accept', function(req, res, next){
+  visited = true;
+  res.status(200).end();
+});
+
+router.get('/content.ajax', function(req, res, next){
+  if(visited)
+    res.send("<p>First</p><p>Second</p>");
+  else
+    res.status(403).send("403 Forbidden");
+});
+
 module.exports = router;
