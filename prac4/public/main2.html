@@ -9,24 +9,40 @@
 <body onload="load()">
     <h1>Heading</h1>
     <script>
-        function load(){            
+        var bool = true;
+        function load(){
             let xml = new XMLHttpRequest();
             xml.onreadystatechange = function(){
                 if(this.readyState == 4 && this.status == 200){
-                    document.getElementsByTagName("body")[0].innerHTML += this.responseText;                }else if(this.status == 403){
-                    alt();
+                    document.getElementsByTagName("body")[0].innerHTML += this.responseText;
+                }else if(this.status == 403 && bool){
+                    bool = false;
+                    check();
                 }
             };
             xml.open("GET", "/content.ajax", true);
             xml.send();
         }
 
+        function check(){
+            let temp = document.createElement("P");
+            temp.innerHTML = "Accept the condition";
+
+            let btn = document.createElement("BUTTON");
+            btn.innerHTML = "Accept";
+            btn.setAttribute("onclick", "alt()");
+
+            document.getElementsByTagName("body")[0].appendChild(temp);
+            document.getElementsByTagName("body")[0].appendChild(btn);
+        }
+
         function alt(){
-            if(confirm("Accept the condition")){
-                let xml = new XMLHttpRequest();
-                xml.open("GET", "/accept", true);
-                xml.send();
-            }
+            let xml = new XMLHttpRequest();
+            xml.open("GET", "/accept", true);
+            xml.send();
+            document.getElementsByTagName("p")[0].remove();
+            document.getElementsByTagName("button")[0].remove();
+            load();
         }
     </script>
 </body>
