@@ -73,7 +73,7 @@ router.get('/log.html', function(req, res, next){
 
 var timeList2 = [];
 router.get('/log.json', function(req, res, next){
-  timeList2.push(String(Date()));
+  timeList2.push(String(Date().toLocaleString()));
   res.send(timeList2);
 });
 
