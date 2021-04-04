@@ -84,7 +84,7 @@ router.get('/contact.ajax', function(req, res, next){
 });
 
 router.get('/search.ajax', function(req, res, next){
-  res.send("<input></input><button type='submit'><i class='fa fa-search'>Search</i></button>");
+  res.send("<input><button type='submit'><i class='fa fa-search'>Search</i></button>");
 });
 
 var visited = false;
