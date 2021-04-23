@@ -1,0 +1,9 @@
++---------------------+
+| Tables_in_enrolment |
++---------------------+
+| enrolments          |
+| students            |
+| subjects            |
+| teachers            |
++---------------------+
+4 rows in set (0.00 sec)
