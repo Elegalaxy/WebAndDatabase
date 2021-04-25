@@ -1,2 +1,2 @@
-USE ENROLMENT;
-SELECT * FROM SUBJECTS;
+USE Enrolment;
+SELECT * FROM Subjects;
