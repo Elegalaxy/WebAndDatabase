@@ -1,4 +1,3 @@
-USE Enrolment;
 SELECT given_name, family_name, mark
 FROM Enrolments, Students
 WHERE ENROLMENTS.mark < 50

@@ -1,4 +1,3 @@
-USE Enrolment;
 SELECT given_name, family_name
 FROM Students, Enrolments
 WHERE Enrolments.subject_code = "COMP SCI 2207"

@@ -1,2 +1,1 @@
-USE Enrolment;
 DESCRIBE Teachers;
