@@ -6,4 +6,4 @@
 | subjects            |
 | teachers            |
 +---------------------+
-4 rows in set (0.20 sec)
+4 rows in set (0.18 sec)
