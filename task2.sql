@@ -84,7 +84,7 @@ CREATE TABLE `subjects` (
 
 LOCK TABLES `subjects` WRITE;
 /*!40000 ALTER TABLE `subjects` DISABLE KEYS */;
-INSERT INTO `subjects` VALUES ('COMP SCI 1102','Object Oriented Programming','ECMS'),('COMP SCI 2207','Web and Database Computing','ECMS'),('COMP SCI 2000','Computer Systems','ECMS'),('PHIL 2039','Philosophy of Mind','Arts');
+INSERT INTO `subjects` VALUES ('COMP SCI 1102','Object Oriented Programming','ECMS'),('COMP SCI 2207','Web and Database Computing','ECMS'),('COMP SCI 2200','Computer Systems','ECMS'),('PHIL 2039','Philosophy of Mind','Arts');
 /*!40000 ALTER TABLE `subjects` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -97,4 +97,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-23 13:22:29
+-- Dump completed on 2021-04-25 16:25:22
