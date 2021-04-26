@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.24, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.23, for Linux (x86_64)
 --
--- Host: localhost    Database: enrolment
+-- Host: 127.0.0.1    Database: enrolment
 -- ------------------------------------------------------
--- Server version	8.0.24
+-- Server version	8.0.19-0ubuntu5
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,76 +16,84 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `enrolments`
+-- Current Database: `enrolment`
 --
 
-DROP TABLE IF EXISTS `enrolments`;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `enrolment` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+
+USE `enrolment`;
+
+--
+-- Table structure for table `Enrolments`
+--
+
+DROP TABLE IF EXISTS `Enrolments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `enrolments` (
-  `student_id` varchar(255) DEFAULT NULL,
-  `subject_code` varchar(255) DEFAULT NULL,
+CREATE TABLE `Enrolments` (
+  `student_id` varchar(50) DEFAULT NULL,
+  `subject_code` varchar(50) DEFAULT NULL,
   `mark` int DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `enrolments`
+-- Dumping data for table `Enrolments`
 --
 
-LOCK TABLES `enrolments` WRITE;
-/*!40000 ALTER TABLE `enrolments` DISABLE KEYS */;
-INSERT INTO `enrolments` VALUES ('a1111111','COMP SCI 1102',62),('a1111111','COMP SCI 2000',80),('a1111112','COMP SCI 1102',55),('a1111112','COMP SCI 2207',80),('a1111113','PHIL 2039',65),('a1111113','COMP SCI 1102',46),('a1111114','COMP SCI 2207',67),('a1111114','COMP SCI 2000',49);
-/*!40000 ALTER TABLE `enrolments` ENABLE KEYS */;
+LOCK TABLES `Enrolments` WRITE;
+/*!40000 ALTER TABLE `Enrolments` DISABLE KEYS */;
+INSERT INTO `Enrolments` VALUES ('a1111111','COMP SCI 1102',62),('a1111111','COMP SCI 2000',80),('a1111112','COMP SCI 1102',55),('a1111112','COMP SCI 2207',80),('a1111113','PHIL 2039',65),('a1111113','COMP SCI 1102',46),('a1111114','COMP SCI 2207',67),('a1111114','COMP SCI 2000',49);
+/*!40000 ALTER TABLE `Enrolments` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `students`
+-- Table structure for table `Students`
 --
 
-DROP TABLE IF EXISTS `students`;
+DROP TABLE IF EXISTS `Students`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `students` (
-  `student_id` varchar(255) DEFAULT NULL,
-  `given_name` varchar(255) DEFAULT NULL,
-  `family_name` varchar(255) DEFAULT NULL,
-  `program` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `Students` (
+  `student_id` varchar(50) DEFAULT NULL,
+  `given_name` varchar(50) DEFAULT NULL,
+  `family_name` varchar(50) DEFAULT NULL,
+  `program` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `students`
+-- Dumping data for table `Students`
 --
 
-LOCK TABLES `students` WRITE;
-/*!40000 ALTER TABLE `students` DISABLE KEYS */;
-INSERT INTO `students` VALUES ('a1111111','Fang','Li','BE(Hons)(Soft)'),('a1111112','Jane','Brown','BE(Hons)(Soft)'),('a1111113','Bob','Smith','BCompSc'),('a1111114','Wei','Zhang','BCompSc');
-/*!40000 ALTER TABLE `students` ENABLE KEYS */;
+LOCK TABLES `Students` WRITE;
+/*!40000 ALTER TABLE `Students` DISABLE KEYS */;
+INSERT INTO `Students` VALUES ('a1111111','Fang','Li','BE(Hons)(Soft)'),('a1111112','Jane','Brown','BE(Hons)(Soft)'),('a1111113','Bob','Smith','BCompSc'),('a1111114','Wei','Zhang','BCompSc');
+/*!40000 ALTER TABLE `Students` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `subjects`
+-- Table structure for table `Subjects`
 --
 
-DROP TABLE IF EXISTS `subjects`;
+DROP TABLE IF EXISTS `Subjects`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `subjects` (
-  `subject_code` varchar(255) DEFAULT NULL,
-  `subject` varchar(255) DEFAULT NULL,
-  `faculty` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `Subjects` (
+  `subject_code` varchar(50) DEFAULT NULL,
+  `subject` varchar(50) DEFAULT NULL,
+  `faculty` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `subjects`
+-- Dumping data for table `Subjects`
 --
 
-LOCK TABLES `subjects` WRITE;
-/*!40000 ALTER TABLE `subjects` DISABLE KEYS */;
-INSERT INTO `subjects` VALUES ('COMP SCI 1102','Object Oriented Programming','ECMS'),('COMP SCI 2207','Web and Database Computing','ECMS'),('COMP SCI 2200','Computer Systems','ECMS'),('PHIL 2039','Philosophy of Mind','Arts');
-/*!40000 ALTER TABLE `subjects` ENABLE KEYS */;
+LOCK TABLES `Subjects` WRITE;
+/*!40000 ALTER TABLE `Subjects` DISABLE KEYS */;
+INSERT INTO `Subjects` VALUES ('COMP SCI 1102','Object Oriented Programming','ECMS'),('COMP SCI 2207','Web and Database Computing','ECMS'),('COMP SCI 2000','Computer Systems','ECMS'),('PHIL 2039','Philosophy of Mind','Arts');
+/*!40000 ALTER TABLE `Subjects` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -97,4 +105,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-25 16:25:22
+-- Dump completed on 2021-04-14 13:13:29
