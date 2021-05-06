@@ -51,11 +51,11 @@ var vueinst = new Vue({
         dark_mode: false,
         c_text: "type your comment here",
 
-        top_menu:[{
-            title:"Home", url:"/",
-            title:"About", url:"/about",
-            title:"Contact Us", url:"/contact",
-        }],
+        top_menu:[
+            {title:"Home", url:"/"},
+            {title:"About", url:"/about"},
+            {title:"Contact Us", url:"/contact"},
+        ],
 
         c_arr:[],
     },
