@@ -38,17 +38,13 @@
                 </nav>
             </header>
             
-            <div class="pad" id="ad" v-if="show_ad" v-bind:style.display="show_ad">
+            <div class="pad" id="ad" v-if="show_ad">
                 <button class="pure-button" style="float:right;" onclick="vueinst.show_ad = false;">close</button>
                 <img v-bind:src="special.url" alt="" onclick="vueinst.special=SPECIALS[Math.floor((Math.random() * 3))];" />
                 <h3>{{special.name}}</h3>
                 <p>{{special.price}}</p>
             </div>
-
-            
-            
-            <main class="pure-g" id="ad" v-else="show_ad">
-            
+            <main class="pure-g" id="ad" v-else>
                 <div class="pad pure-u-2-3">
                     <div id="items">
                         <input type="text" class="pure-u-3-4" /><button class="pure-button pure-u-1-4">Search</button>
