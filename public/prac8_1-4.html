@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prac 8</title>
+    <meta content="">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+    <style>.button-success {background: rgb(28, 184, 65);color: white;}</style>
+  </head>
+  <body>
+  
+    <div id="main">
+  
+        <h1>My Blog</h1>
+        <hr />
+        <div id="newpost">
+            <h2>Add a post</h2>
+            <form class="pure-form">
+
+                <fieldset class="pure-group">
+                    <input id="inTitle" type="text" class="pure-input-1-2" placeholder="Blog post title">
+                    <textarea id="inCont" class="pure-input-1-2" placeholder="Blog Post Content"></textarea>
+                </fieldset>
+
+                <button type="button" class="pure-button pure-input-1-2 pure-button-primary" onclick="addPost()">make post</button>
+            </form>
+        </div>
+        <hr />
+        <div id="posts">
+            <h2>Current Posts</h2>
+            <div id="postList">
+            </div>
+            <form class="pure-form">
+                <button type="button" class="pure-button pure-input-1-2 pure-button-primary" onclick="getPosts()">show all posts</button>
+            </form>
+        
+        </div>
+        
+        <div id="tcs" style="display: none;">
+            <h2>Terms and Conditions</h2>
+            <p>All your base are belong to us.</p>
+            <button class="pure-button button-success">Accept</button>
+        </div>
+    
+    </div>
+    <script>
+        function addPost(){
+            let t = document.getElementById("inTitle").value;
+            let c = document.getElementById("inCont").value;
+            let xml = new XMLHttpRequest();
+            xml.open("POST", "/addpost", true);
+            xml.setRequestHeader("Content-type", "application/json");
+            xml.send(JSON.stringify({title: t, content: c }));
+        }
+
+        function getPosts(){
+            let xml = new XMLHttpRequest();
+            xml.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    let arr = JSON.parse(this.response);
+
+                    let list = document.createElement("DIV");
+                    list.setAttribute("id", "postList");
+
+                    for(let i = 0; i < arr.length; i++){
+                        let ti = document.createElement("H2");
+                        ti.innerText = arr[i].title;
+                        let cont = document.createElement("P");
+                        cont.innerText = arr[i].content;
+
+                        list.appendChild(ti);
+                        list.appendChild(cont);
+                    }
+                    document.getElementById("posts").replaceChild(list, document.getElementById("postList"));
+                }
+            };
+            xml.open("GET", "/getposts", true);
+            xml.setRequestHeader("Content-type", "application/json");
+            xml.send();
+        }
+    </script>
+  </body>
+</html>
