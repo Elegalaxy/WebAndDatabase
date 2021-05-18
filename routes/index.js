@@ -54,7 +54,7 @@ router.get('/cookies', function(req, res) {
   }else{
     res.cookie("task3_1", 1);
   }
-  res.send();
+  res.send(v);
 });
 
 router.get('/clear', function(req, res) {
