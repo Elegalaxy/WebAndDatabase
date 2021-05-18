@@ -46,4 +46,20 @@ router.post('/test', function(req, res) {
   res.send();
 });
 
+router.get('/cookies', function(req, res) {
+  console.log(req.cookies.task3_1);
+  if(req.cookies.task3_1 != ""){
+    let v = parseInt(req.cookies.task3_1) +1;
+    res.cookie("task3_1", v);
+  }else{
+    res.cookie("task3_1", 1);
+  }
+  res.send();
+});
+
+router.get('/clear', function(req, res) {
+  res.clearCookie("task3_1");
+  res.send();
+});
+
 module.exports = router;
