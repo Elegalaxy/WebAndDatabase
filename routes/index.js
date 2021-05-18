@@ -1,5 +1,7 @@
+const { json } = require('express');
 var express = require('express');
 var router = express.Router();
+var app = express();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -20,7 +22,6 @@ router.get('/brew', function(req, res) {
 var prev = "first";
 router.post('/pass-it-on', function(req, res) {
   let text = req.body.message;
-  console.log(text);
   if(text == null || text == ""){
     res.status(400).end();
   }else{  
@@ -38,22 +39,6 @@ router.post('/combine', function(req, res) {
     fin+=lines[i]+suf+'\n';
   }
   res.send(fin);
-});
-
-var express = require('express');
-var app = express();
-app.use(express.json());
-
-var blog = [];
-router.post('/addpost', function(req, res) {
-  blog.push(req.body);
-  res.status(200).end();
-});
-
-router.get('/getposts', function(req, res) {
-  let temp = blog;
-  temp.reverse();
-  res.send(temp);
 });
 
 module.exports = router;

@@ -38,4 +38,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+var count = 0;
+app.use(function (req, res, next) {
+  count++;
+  console.log("Received " + count + " requests");  
+  next()
+})
+
 module.exports = app;
