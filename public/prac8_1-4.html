@@ -47,7 +47,7 @@
             let t = document.getElementById("inTitle").value;
             let c = document.getElementById("inCont").value;
             let xml = new XMLHttpRequest();
-            xml.open("POST", "/addpost", true);
+            xml.open("POST", "/users/addpost", true);
             xml.setRequestHeader("Content-type", "application/json");
             xml.send(JSON.stringify({title: t, content: c }));
         }
@@ -73,7 +73,7 @@
                     document.getElementById("posts").replaceChild(list, document.getElementById("postList"));
                 }
             };
-            xml.open("GET", "/getposts", true);
+            xml.open("GET", "/users/getposts", true);
             xml.setRequestHeader("Content-type", "application/json");
             xml.send();
         }
