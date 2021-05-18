@@ -16,6 +16,11 @@ app.use(function (req, res, next) {
   next()
 })
 
+app.use("/users/*", function (req, res, next) {
+  console.log("POST from a user");
+  next()
+})
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
