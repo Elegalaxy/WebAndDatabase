@@ -41,4 +41,9 @@ router.post('/combine', function(req, res) {
   res.send(fin);
 });
 
+router.post('/test', function(req, res) {
+  console.log("POSTED");
+  res.send();
+});
+
 module.exports = router;

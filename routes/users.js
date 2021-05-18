@@ -22,4 +22,9 @@ router.get('/getposts', function(req, res) {
   res.send(temp);
 });
 
+router.get('/test', function(req, res) {
+  console.log("GET1");
+  res.send();
+});
+
 module.exports = router;

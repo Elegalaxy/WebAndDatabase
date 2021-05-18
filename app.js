@@ -16,7 +16,7 @@ app.use(function (req, res, next) {
   next()
 })
 
-app.use("/users/*", function (req, res, next) {
+app.post("/users/*", function (req, res, next) {
   console.log("POST from a user");
   next()
 })
