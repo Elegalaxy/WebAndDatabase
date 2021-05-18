@@ -46,7 +46,7 @@ router.post('/test', function(req, res) {
   res.send();
 });
 
-router.get('/cookies', function(req, res) {
+router.get('/cookie', function(req, res) {
   console.log(req.cookies.task3_1);
   if(req.cookies.task3_1 != ""){
     let v = parseInt(req.cookies.task3_1) +1;
