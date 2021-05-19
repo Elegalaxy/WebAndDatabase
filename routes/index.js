@@ -48,7 +48,7 @@ router.post('/test', function(req, res) {
 
 router.get('/cookie', function(req, res) {
   console.log(req.cookies.task3_1);
-  if(req.cookies.task3_1 != ""){
+  if("task3_1" in req.cookies){
     let v = parseInt(req.cookies.task3_1) +1;
     res.cookie("task3_1", v);
   }else{
