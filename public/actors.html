@@ -70,6 +70,7 @@
               let last = document.createElement("TD");
               first.innerHTML = arr[i].first_name;
               last.innerHTML = arr[i].last_name;
+              console.log(arr[i]);
               tab.appendChild(first);
               tab.appendChild(last);
               grandpa.appendChild(tab);
@@ -83,6 +84,27 @@
         xml.send();
       };
 
+      // function getTable() {
+      //   var TB = document.getElementById("tables");
+      //   const xhr = new XMLHttpRequest();
+      //   xhr.open("GET", '/users/getTable', true);
+      //   xhr.send();
+      //   xhr.onreadystatechange = function() {
+      //     if (this.readyState == 4 && this.status == 200) {
+      //       let res = JSON.parse(this.response);
+      //       let text = "";
+      //       for(let i = 0; i < res.length; i++)
+      //       {
+      //         text +=           "<tr>" +
+      //                               "<td>" + res[i].first_name + "</td>" +
+      //                               "<td>" + res[i].last_name + "</td>" +
+      //                            "</tr>"
+      //       }
+      //       TB.innerHTML = text;
+      //     }
+      //   };
+      // }
+
       function addActor(){
         let firstName = document.getElementById("firstIn").innerHTML;
         let lastName = document.getElementById("lastIn").innerHTML;
@@ -91,6 +113,7 @@
         xml.open("POST", "/users/addActor", true);
         xml.setRequestHeader("Content-type", "application/json");
         xml.send(JSON.stringify({first: firstName, last: lastName}));
+        getTable();
       }
     </script>
     <footer>&copy; 2021 WDC</footer>
